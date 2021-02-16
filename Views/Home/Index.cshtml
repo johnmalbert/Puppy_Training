@@ -5,17 +5,38 @@
 
 <div class="text-center">
     <h1 class="display-4">VesperDachi</h1>
-        <div class="row m-5">
+        <div class="row m-5">            
             <div class="col border"><h3>Meals: @ViewBag.Meals</h3></div>
-            <div class="col border"><h3>Fullness: @ViewBag.Fullness</h3></div>
-            <div class="col border"><h3>Happiness: @ViewBag.Happiness</h3></div>
-            <div class="col border"><h3>Energy: @ViewBag.Energy</h3></div>
+            @if(ViewBag.Fullness <= 10)
+            {
+                <div class="col border"><h3>Fullness: <span style="color: red;"> @ViewBag.Fullness</span></h3></div>
+            }else if(ViewBag.Fullness > 99){
+                <div class="col border"><h3>Fullness: <span style="color: green;"> @ViewBag.Fullness</span></h3></div>
+            }else{
+                <div class="col border"><h3>Fullness: @ViewBag.Fullness</h3></div>
+            }
+            @if(ViewBag.Happiness <= 10)
+            {
+                <div class="col border"><h3>Happiness: <span style="color: red;"> @ViewBag.Happiness</span></h3></div>
+            }else if(ViewBag.Happiness > 99){
+                <div class="col border"><h3>Happiness: <span style="color: green;"> @ViewBag.Happiness</span></h3></div>
+            }else{
+                <div class="col border"><h3>Happiness: @ViewBag.Happiness</h3></div>
+            }
+            @if(ViewBag.Energy <= 10)
+            {
+                <div class="col border"><h3>Energy: <span style="color: red;"> @ViewBag.Energy</span></h3></div>
+            }else if(ViewBag.Energy > 99){
+                <div class="col border"><h3>Energy: <span style="color: green;"> @ViewBag.Energy</span></h3></div>
+            }else{
+                <div class="col border"><h3>Energy: @ViewBag.Energy</h3></div>
+            }
         </div>
 
     <div class="col border p-5">
         <h3>@ViewBag.Message</h3>
         <img src= "@Url.Content(ViewBag.ImgUrl)" alt="" style="max-height: 40vh; border: 2px solid gray;">
-        <h3>Choose your next action wisely!</h3>
+    <h3>Choose your next action wisely!</h3>
     </div>
     <div class="row">
         @if(@ViewBag.Meals > 0){

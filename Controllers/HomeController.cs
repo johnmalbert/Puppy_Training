@@ -34,11 +34,17 @@ namespace VesperDachi.Controllers
             if(happiness.Value > 99 && Fullness.Value > 99 && Energy.Value > 99)
             {
                 //winner!
+                ViewBag.Happiness = HttpContext.Session.GetInt32("Happiness");
+                ViewBag.Fullness = HttpContext.Session.GetInt32("Fullness");
+                ViewBag.Energy = HttpContext.Session.GetInt32("Energy");
                 return View("happy-dog");
             }
             else if(happiness.Value < 1 || Fullness.Value < 1 || Energy.Value < 1)
             {
                 //loser
+                ViewBag.Happiness = HttpContext.Session.GetInt32("Happiness");
+                ViewBag.Fullness = HttpContext.Session.GetInt32("Fullness");
+                ViewBag.Energy = HttpContext.Session.GetInt32("Energy");
                 return View("Loser");
             }
 

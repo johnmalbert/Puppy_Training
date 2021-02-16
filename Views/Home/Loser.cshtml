@@ -4,6 +4,27 @@
 
 <div class="text-center">
     <h1 class="display-4">You Lost!</h1>
+        <div class="row m-5">            
+            @if(ViewBag.Fullness <= 10)
+            {
+                <div class="col border"><h3>Fullness: <span style="color: red;"> @ViewBag.Fullness</span></h3></div>
+            }else{
+                <div class="col border"><h3>Fullness: @ViewBag.Fullness</h3></div>
+            }
+            @if(ViewBag.Happiness <= 10)
+            {
+                <div class="col border"><h3>Happiness: <span style="color: red;"> @ViewBag.Happiness</span></h3></div>
+            }else{
+                <div class="col border"><h3>Happiness: @ViewBag.Happiness</h3></div>
+            }
+            @if(ViewBag.Energy <= 10)
+            {
+                <div class="col border"><h3>Energy: <span style="color: red;"> @ViewBag.Energy</span></h3></div>
+            }else{
+                <div class="col border"><h3>Energy: @ViewBag.Energy</h3></div>
+            }
+        </div>
+
     <img src="~/img/IMG_2064.JPG" alt="LOSER" style="max-height: 70vh; border: 2px solid gray;">
     <div class="row">
         <div class="col"><a href="/"><button class="btn btn-primary m-2"> Play Again?</button></a></div>
