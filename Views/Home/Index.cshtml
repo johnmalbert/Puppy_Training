@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">VesperDachi</h1>
+        <div class="row m-5">
+            <div class="col border"><h3>Meals: @ViewBag.Meals</h3></div>
+            <div class="col border"><h3>Fullness: @ViewBag.Fullness</h3></div>
+            <div class="col border"><h3>Happiness: @ViewBag.Happiness</h3></div>
+            <div class="col border"><h3>Energy: @ViewBag.Energy</h3></div>
+        </div>
+
+    <div class="col border p-5">
+        <h3>@ViewBag.Message</h3>
+        <img src= "@Url.Content(ViewBag.ImgUrl)" alt="" style="max-height: 40vh; border: 2px solid gray;">
+        <h3>Choose your next action wisely!</h3>
+    </div>
+    <div class="row">
+        @if(@ViewBag.Meals > 0){
+            <div class="col"><a href="/feed"><button class="btn btn-primary m-2">Feed Vesper</button></a></div>
+        }
+        <div class="col"><a href="/play"><button class="btn btn-primary m-2"> Go Play</button></a></div>
+        <div class="col"><a href="/work"><button class="btn btn-primary m-2"> Make Vesper Work</button></a></div>
+        <div class="col"><a href="/sleep"><button class="btn btn-primary m-2"> Make Vesper Sleep</button></a></div>
+    </div>
+</div>
